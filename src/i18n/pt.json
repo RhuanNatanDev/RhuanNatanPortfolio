@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "RN - Engenheiro de Software - Curitiba, PR",
+    "description": "Engenheiro de Software com 2 anos de experiência corporativa, especializado em Java, Spring Boot e sistemas de alto desempenho."
+  },
+  "nav": {
+    "about": "SOBRE",
+    "work": "PROJETOS",
+    "contact": "CONTATO",
+    "location": "Curitiba, PR, Brasil.",
+    "available": "Disponível para trabalho →",
+    "hire": "Contrate-me",
+    "role": "ENGENHEIRO DE SOFTWARE"
+  },
+  "hero": {
+    "word1": "ENGENHEIRO",
+    "word2": "DE SOFTWARE"
+  },
+  "about": {
+    "label": "SOBRE",
+    "main": "Desenvolvo soluções backend escaláveis e robustas, transformando requisitos complexos em APIs eficientes com código limpo e boas práticas.",
+    "secondary": "Comecei com lógica de programação e POO no técnico, trabalhei na Sanepar dando suporte a sistemas internos de larga escala, desenvolvi APIs RESTful com Spring Boot e JPA/Hibernate, automatizei processos com Python, apliquei metodologias ágeis (Scrum), e continuo aprendendo."
+  },
+  "skills": {
+    "label": "FORMAÇÃO & HABILIDADES",
+    "uniamerica_title": "UniAmérica",
+    "uniamerica_detail": "Tecnólogo em ADS",
+    "uniamerica_sub": "(Conclusão: Jan 2027)",
+    "sanepar_title": "Sanepar",
+    "sanepar_detail": "Aprendiz de TI",
+    "sanepar_sub": "(Fev 2023 - Fev 2025)",
+    "backend_title": "Backend",
+    "quality_title": "Qualidade",
+    "languages_title": "Linguagens"
+  },
+  "work": {
+    "card1_tag2": "Automação",
+    "card1_title": "API RESTful com Spring Boot",
+    "card1_desc": "Autenticação, validação e tratamento de erros estruturado. Arquitetura em camadas Controller → Service → Repository com cobertura de testes > 80%.",
+    "card1_label": "API RESTFUL SPRING BOOT",
+    "card2_title": "Automação com Python",
+    "card2_desc": "Processamento de relatórios operacionais via APIs externas, reduzindo tempo de processamento manual em ~70% e eliminando erros de entrada.",
+    "card2_label": "AUTOMAÇÃO DE RELATÓRIOS",
+    "card3_tag1": "TI",
+    "card3_title": "Suporte TI — Sanepar",
+    "card3_desc": "Otimização de operações para 500+ usuários internos, redução de ~30% no tempo de resolução de chamados. Controle de qualidade e testes funcionais.",
+    "card3_label": "SANEPAR — OPERAÇÕES TI"
+  }
+}

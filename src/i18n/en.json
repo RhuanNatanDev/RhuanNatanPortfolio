@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "RN - Software Engineer - Curitiba, PR",
+    "description": "Software Engineer with 2 years of corporate experience, specialized in Java, Spring Boot, and high-performance systems."
+  },
+  "nav": {
+    "about": "ABOUT",
+    "work": "PROJECTS",
+    "contact": "CONTACT",
+    "location": "Curitiba, PR, Brazil.",
+    "available": "Available for work →",
+    "hire": "Hire me",
+    "role": "SOFTWARE ENGINEER"
+  },
+  "hero": {
+    "word1": "SOFTWARE",
+    "word2": "ENGINEER"
+  },
+  "about": {
+    "label": "ABOUT",
+    "main": "I build scalable and robust backend solutions, turning complex requirements into efficient APIs with clean code and best practices.",
+    "secondary": "I started with programming logic and OOP in technical school, worked at Sanepar supporting large-scale internal systems, developed RESTful APIs with Spring Boot and JPA/Hibernate, automated processes with Python, applied agile methodologies (Scrum), and keep learning."
+  },
+  "skills": {
+    "label": "EDUCATION & SKILLS",
+    "uniamerica_title": "UniAmérica",
+    "uniamerica_detail": "Associate in Software Dev",
+    "uniamerica_sub": "(Completion: Jan 2027)",
+    "sanepar_title": "Sanepar",
+    "sanepar_detail": "IT Apprentice",
+    "sanepar_sub": "(Feb 2023 - Feb 2025)",
+    "backend_title": "Backend",
+    "quality_title": "Quality",
+    "languages_title": "Languages"
+  },
+  "work": {
+    "card1_tag2": "Automation",
+    "card1_title": "RESTful API with Spring Boot",
+    "card1_desc": "Authentication, validation, and structured error handling. Layered architecture Controller → Service → Repository with test coverage > 80%.",
+    "card1_label": "RESTFUL SPRING BOOT API",
+    "card2_title": "Python Automation",
+    "card2_desc": "Operational report processing via external APIs, reducing manual processing time by ~70% and eliminating input errors.",
+    "card2_label": "REPORT AUTOMATION",
+    "card3_tag1": "IT",
+    "card3_title": "IT Support — Sanepar",
+    "card3_desc": "Operations optimization for 500+ internal users, ~30% reduction in ticket resolution time. Quality control and functional testing.",
+    "card3_label": "SANEPAR — IT OPERATIONS"
+  }
+}
