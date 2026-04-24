@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "RN - Software Engineer - Curitiba, PR",
-    "description": "Software Engineer with 2 years of corporate experience, specialized in Java, Spring Boot, and high-performance systems."
+    "description": "Software Engineer with 2 years of corporate experience, specialized in Java, Spring Boot and high-performance systems."
   },
   "nav": {
     "about": "ABOUT",
@@ -9,41 +9,68 @@
     "contact": "CONTACT",
     "location": "Curitiba, PR, Brazil.",
     "available": "Available for work →",
-    "hire": "Hire me",
-    "role": "SOFTWARE ENGINEER"
+    "hire": "Hire me"
   },
   "hero": {
     "word1": "SOFTWARE",
     "word2": "ENGINEER"
   },
+  "gate": {
+    "label": "ENTERING THE SYSTEM"
+  },
+  "metrics": {
+    "label": "METRICS",
+    "experience": "YEARS OF EXPERIENCE",
+    "users": "USERS SUPPORTED",
+    "reduction": "TIME REDUCTION",
+    "coverage": "TEST COVERAGE"
+  },
   "about": {
     "label": "ABOUT",
-    "main": "I build scalable and robust backend solutions, turning complex requirements into efficient APIs with clean code and best practices.",
-    "secondary": "I started with programming logic and OOP in technical school, worked at Sanepar supporting large-scale internal systems, developed RESTful APIs with Spring Boot and JPA/Hibernate, automated processes with Python, applied agile methodologies (Scrum), and keep learning."
+    "main": "Specialist in Java, Spring Boot and high-performance systems with cloud experience (AWS). With 2 years of corporate experience, I build robust, scalable and testable applications.",
+    "secondary": "Since the beginning of my career, I have focused on writing clean, efficient code with architecture in layers (Controller → Service → Repository). Currently, I am deepening my knowledge in microservices, messaging (Kafka/RabbitMQ) and DevOps culture."
   },
   "skills": {
     "label": "EDUCATION & SKILLS",
     "uniamerica_title": "UniAmérica",
-    "uniamerica_detail": "Associate in Software Dev",
+    "uniamerica_detail": "Technologist in Systems Analysis",
     "uniamerica_sub": "(Completion: Jan 2027)",
     "sanepar_title": "Sanepar",
     "sanepar_detail": "IT Apprentice",
-    "sanepar_sub": "(Feb 2023 - Feb 2025)",
+    "sanepar_sub": "(Feb 2023 – Feb 2025)",
     "backend_title": "Backend",
+    "backend_desc": "Java 8/17, Spring Boot, RESTful APIs, JPA/Hibernate, JWT, SQL/NoSQL, Docker, CI/CD.",
     "quality_title": "Quality",
-    "languages_title": "Languages"
+    "quality_desc": "JUnit, Mockito, BDD, code review, clean code, design patterns.",
+    "languages_title": "Languages",
+    "languages_desc": "Portuguese (Native), English (B2 - Conversational), Spanish (Basic)."
+  },
+  "philosophy": {
+    "quote": "Great software is not just functional — it is built to be understood, maintained, and evolved. Architecture and testing are the foundations for scalable systems that last for years."
   },
   "work": {
-    "card1_tag2": "Automation",
+    "label": "PROJECTS",
     "card1_title": "RESTful API with Spring Boot",
-    "card1_desc": "Authentication, validation, and structured error handling. Layered architecture Controller → Service → Repository with test coverage > 80%.",
-    "card1_label": "RESTFUL SPRING BOOT API",
-    "card2_title": "Python Automation",
-    "card2_desc": "Operational report processing via external APIs, reducing manual processing time by ~70% and eliminating input errors.",
+    "card1_desc": "Authentication, validation and structured error handling. Layered architecture Controller → Service → Repository with test coverage > 80%.",
+    "card1_label": "RESTFUL API SPRING BOOT",
+    "card2_title": "Automation with Python",
+    "card2_desc": "Processing of operational reports via external APIs, reducing manual processing time by ~70% and eliminating input errors.",
     "card2_label": "REPORT AUTOMATION",
-    "card3_tag1": "IT",
     "card3_title": "IT Support — Sanepar",
     "card3_desc": "Operations optimization for 500+ internal users, ~30% reduction in ticket resolution time. Quality control and functional testing.",
     "card3_label": "SANEPAR — IT OPERATIONS"
+  },
+  "contact": {
+    "label": "CONTACT",
+    "title": "LET'S CONNECT",
+    "subtitle": "With innovation, security and efficiency.",
+    "form_name": "NAME",
+    "form_email": "EMAIL",
+    "form_message": "MESSAGE",
+    "send": "SEND",
+    "sent": "SENT",
+    "footer": "© 2025 Rhuan Natan. All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   }
 }
