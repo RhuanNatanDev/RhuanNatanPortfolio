@@ -111,7 +111,11 @@ function applyTranslations(lang) {
     const key = el.getAttribute('data-i18n');
     const value = getNestedValue(t, key);
     if (value !== undefined) {
-      scrambleText(el, value);
+      if (el.classList.contains('hero-word')) {
+        el.textContent = value;
+      } else {
+        scrambleText(el, value);
+      }
     }
   });
 }
