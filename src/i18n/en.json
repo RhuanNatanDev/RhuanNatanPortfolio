@@ -9,11 +9,13 @@
     "contact": "CONTACT",
     "location": "Curitiba, PR, Brazil.",
     "available": "Available for work →",
-    "hire": "Hire me"
+    "hire": "Hire me",
+    "role": "SOFTWARE ENGINEER"
   },
   "hero": {
-    "word1": "SOFTWARE",
-    "word2": "ENGINEER"
+    "intro": "SOFTWARE ENGINEER",
+    "word1": "RHUAN",
+    "word2": "NATAN"
   },
   "gate": {
     "label": "ENTERING THE SYSTEM"

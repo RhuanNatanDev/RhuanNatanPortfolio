@@ -135,6 +135,23 @@ function applyTranslations(lang) {
         } else {
           el.textContent = value;
         }
+      } else if (el.classList.contains('hero-name-intro')) {
+        if (window.heroAnimationComplete) return;
+        // Handle translatable intro letters
+        el.innerHTML = '';
+        value.split('').forEach(char => {
+          if (char === ' ') {
+            const space = document.createElement('span');
+            space.className = 'intro-space';
+            space.innerHTML = '&nbsp;';
+            el.appendChild(space);
+          } else {
+            const span = document.createElement('span');
+            span.className = 'intro-letter';
+            span.innerText = char;
+            el.appendChild(span);
+          }
+        });
       } else {
         scrambleText(el, value);
       }

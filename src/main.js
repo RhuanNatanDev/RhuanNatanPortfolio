@@ -1,7 +1,6 @@
 import './style.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from '@studio-freight/lenis';
 import * as THREE from 'three';
 import { initI18n, scrambleText } from './i18n/i18n.js';
 import { init3DWorld, updateState, updateThemeColor } from './three-world.js';
@@ -40,31 +39,19 @@ const loadInterval = setInterval(() => {
 // ===== I18N =====
 initI18n();
 
-// ===== SMOOTH SCROLLING =====
-const lenis = new Lenis({
-  duration: 1.4,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  direction: 'vertical',
-  smooth: true,
-  mouseMultiplier: 1,
-  smoothTouch: false,
-  touchMultiplier: 2,
-});
+// ===== SCROLL HANDLING (NATIVE) =====
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const velocity = ScrollTrigger.getVelocity() / 100; // Normalize velocity
+  
+  updateState('scrollY', scrollY);
+  updateState('velocity', velocity);
 
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
-
-lenis.on('scroll', (e) => {
-  ScrollTrigger.update();
-  updateState('scrollY', e.animatedScroll);
-  updateState('velocity', e.velocity);
-  const velocity = e.velocity;
   gsap.to('.about-main, .work-card', {
-    skewY: velocity * 0.05, duration: 0.5, ease: 'power3.out', overwrite: true
+    skewY: velocity * 0.1, duration: 0.4, ease: 'power3.out', overwrite: true
   });
 });
 
-gsap.ticker.add((time) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
 // ===== THREE.JS BACKGROUND SHADER =====
@@ -161,7 +148,7 @@ document.addEventListener('mousemove', (e) => {
   updateState('mouseY', targetMouse.y);
 });
 
-lenis.on('scroll', (e) => { scrollVelocity = e.velocity; });
+// Scroll velocity is handled in the main scroll listener above
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -195,13 +182,10 @@ const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
 let posX = 0, posY = 0;
 
-gsap.to({}, 0.016, {
-  repeat: -1,
-  onRepeat: function() {
-    posX += (mouseX - posX) / 9; posY += (mouseY - posY) / 9;
-    gsap.set(follower, { css: { left: posX, top: posY } });
-    gsap.set(cursor, { css: { left: mouseX, top: mouseY } });
-  }
+gsap.ticker.add(() => {
+  posX += (mouseX - posX) / 5; posY += (mouseY - posY) / 5;
+  gsap.set(follower, { css: { left: posX, top: posY } });
+  gsap.set(cursor, { css: { left: mouseX, top: mouseY } });
 });
 
 document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY; });
