@@ -476,6 +476,7 @@ gsap.utils.toArray('.work-card').forEach((card, i) => {
 function setupBinaryStrips() {
   const strips = document.querySelectorAll('.hero-binary-strip');
   const isReversed = Math.random() > 0.5;
+  const PIXELS_PER_SECOND = 60; // Target constant speed
 
   strips.forEach((strip, i) => {
     const textEl = strip.querySelector('.binary-text');
@@ -483,15 +484,17 @@ function setupBinaryStrips() {
     
     // Repeat content multiple times to ensure seamless loop
     const originalText = textEl.innerHTML;
-    textEl.innerHTML = (originalText + ' ////// ').repeat(10);
+    textEl.innerHTML = (originalText + ' ////// ').repeat(15);
+    
+    // Calculate width to normalize speed
+    const width = textEl.offsetWidth;
+    const duration = (width / 2) / PIXELS_PER_SECOND;
+    
+    textEl.style.animationDuration = `${duration}s`;
     
     // Set random opposite directions
     const shouldReverse = (i === 0) ? isReversed : !isReversed;
-    if (shouldReverse) {
-      textEl.style.animationDirection = 'reverse';
-    } else {
-      textEl.style.animationDirection = 'normal';
-    }
+    textEl.style.animationDirection = shouldReverse ? 'reverse' : 'normal';
   });
 }
 setupBinaryStrips();
