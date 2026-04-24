@@ -321,6 +321,7 @@ function setupHeroAnimation() {
     paused: true,
     onComplete: () => {
       document.body.classList.remove('no-scroll');
+      window.heroAnimationComplete = true;
     }
   });
 

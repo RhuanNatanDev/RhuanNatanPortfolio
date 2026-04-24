@@ -68,16 +68,16 @@ export function setLanguage(lang) {
  * Custom text scrambler
  */
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-export function scrambleText(element, targetText = null, duration = 800) {
+export function scrambleText(element, targetText = null, duration = 800, onComplete = null) {
   const finalString = targetText || element.textContent;
   const length = finalString.length;
   let start = Date.now();
-  
+
   function update() {
     let now = Date.now();
     let progress = (now - start) / duration;
     if (progress > 1) progress = 1;
-    
+
     let scrambled = "";
     for (let i = 0; i < length; i++) {
       if (finalString[i] === ' ' || finalString[i] === '✦' || finalString[i] === '→') {
@@ -90,16 +90,34 @@ export function scrambleText(element, targetText = null, duration = 800) {
         scrambled += chars[Math.floor(Math.random() * chars.length)];
       }
     }
-    
+
     element.textContent = scrambled;
-    
+
     if (progress < 1) {
       requestAnimationFrame(update);
     } else {
       element.textContent = finalString;
+      if (onComplete) onComplete();
     }
   }
   requestAnimationFrame(update);
+}
+
+/**
+ * Rebuilds hero-letter spans inside a hero-word after scramble completes,
+ * so the original GSAP timeline states are restored on the new letters.
+ */
+function rebuildHeroLetters(wordEl) {
+  const text = wordEl.textContent;
+  wordEl.innerHTML = '';
+  text.split('').forEach(char => {
+    const span = document.createElement('span');
+    span.innerText = char === ' ' ? '\u00A0' : char;
+    span.className = 'hero-letter';
+    span.style.display = 'inline-block';
+    wordEl.appendChild(span);
+  });
+  gsap.set(wordEl.querySelectorAll('.hero-letter'), { x: 0, y: 0, rotationZ: 0, rotationX: 0, scale: 1, opacity: 1 });
 }
 
 /**
@@ -112,7 +130,11 @@ function applyTranslations(lang) {
     const value = getNestedValue(t, key);
     if (value !== undefined) {
       if (el.classList.contains('hero-word')) {
-        el.textContent = value;
+        if (window.heroAnimationComplete) {
+          scrambleText(el, value, 800, () => rebuildHeroLetters(el));
+        } else {
+          el.textContent = value;
+        }
       } else {
         scrambleText(el, value);
       }
