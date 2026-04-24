@@ -5,6 +5,12 @@ import * as THREE from 'three';
 import { initI18n, scrambleText } from './i18n/i18n.js';
 import { init3DWorld, updateState, updateThemeColor } from './three-world.js';
 
+// Force scroll to top on reload for hero animation
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ===== LOADING SCREEN =====
